@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin_16dp"
+    tools:context=".view.activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/loginMainLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_70dp"
+        android:src="@drawable/re_art_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/loginHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loginHeaderText"
+        android:fontFamily="@font/noto_san_regular"
+        android:textSize="@dimen/text_22sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/margin_30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginMainLogo" />
+
+    <EditText
+        android:id="@+id/editEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24dp"
+        android:background="@drawable/bg_edit_email_gray_radius_5dp"
+        android:fontFamily="@font/roboto_light"
+        android:hint="@string/emailLoginText"
+        android:padding="10dp"
+        android:textColorHint="@color/colorGray959595"
+        android:textSize="@dimen/text_20sp"
+        app:layout_constraintTop_toBottomOf="@+id/loginHeader" />
+
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24dp"
+        android:background="@drawable/bg_edit_email_gray_radius_5dp"
+        android:fontFamily="@font/roboto_light"
+        android:hint="@string/passwordLoginText"
+        android:padding="10dp"
+        android:textColorHint="@color/colorGray959595"
+        android:textSize="@dimen/text_20sp"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_login_yellow_radius_50dp"
+        android:text="@string/login"
+        android:textSize="@dimen/text_20sp"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginLeft="@dimen/margin_24dp"
+        android:layout_marginRight="@dimen/margin_24dp"
+        android:layout_marginTop="@dimen/margin_40dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+
+    <TextView
+        android:id="@+id/textSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/noAccountSignUp"
+        android:layout_marginTop="@dimen/margin_20dp"
+        android:textColor="@color/colorTextGray8D8D8D"
+        android:textSize="@dimen/text_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

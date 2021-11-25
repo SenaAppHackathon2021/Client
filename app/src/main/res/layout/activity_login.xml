@@ -45,22 +45,20 @@
             android:textSize="@dimen/text_20sp"
             app:layout_constraintTop_toBottomOf="@+id/loginHeader" />
 
-        <EditText
-            android:id="@+id/editPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_24dp"
-            android:inputType="textPassword"
-            android:singleLine="true"
-            android:background="@drawable/bg_edit_email_gray_radius_5dp"
-            android:fontFamily="@font/roboto_light"
-            android:hint="@string/passwordLoginText"
-            android:padding="10dp"
-            android:textColorHint="@color/colorGray959595"
-            android:textSize="@dimen/text_20sp"
-            app:layout_constraintEnd_toEndOf="@+id/editEmail"
-            app:layout_constraintStart_toStartOf="@+id/editEmail"
-            app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+    <EditText
+        android:id="@+id/editPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_24dp"
+        android:inputType="textPassword"
+        android:background="@drawable/bg_edit_email_gray_radius_5dp"
+        android:fontFamily="@font/roboto_light"
+        android:hint="@string/passwordLoginText"
+        android:padding="10dp"
+        android:textColorHint="@color/colorGray959595"
+        android:textSize="@dimen/text_20sp"
+        app:layout_constraintTop_toBottomOf="@+id/editEmail"
+        />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"

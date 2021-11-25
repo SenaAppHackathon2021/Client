@@ -55,7 +55,7 @@ class PostArtFragment : Fragment() {
                 val supporterName = binding.editSupporter.text.toString()
 
                 if (supporterName.isBlank()) {
-                    Toast.makeText(context, "이름을 입력해주세요", Toast.LENGTH_SHORT).show()
+                    makeToast("이름을 입력해주세요")
                 } else {
                     viewModel.addSupporter(supporterName)
                     editSupporter.text.clear()
@@ -84,10 +84,29 @@ class PostArtFragment : Fragment() {
             imageAfter.setOnClickListener {
                 startActivityForResult(galleryIntent, GET_AFTER_IMAGE_REQUEST)
             }
-        }
 
-        // 원래 DiffUtil 코드
-        mAdapter.setData(viewModel.supporterList)
+            // 게시물 제출 버튼
+            buttonSubmit.setOnClickListener {
+                if (editTitle.text.isBlank())
+                    makeToast("제목을 입력해주세요")
+                else if (editContent.text.isBlank())
+                    makeToast("내용을 입력해주세요")
+
+                val post = ArtPost(
+                    editTitle.text.toString(),
+                    editContent.text.toString(),
+                    Picture(
+                        viewModel.photoBeforeBase64,
+                        viewModel.photoAfterBase64
+                    ),
+                    viewModel.supporterList
+                )
+
+                viewModel.uploadPost(post)
+
+                makeToast("게시물을 올렸습니다!")
+            }
+        }
 
         return binding.root
     }

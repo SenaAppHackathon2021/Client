@@ -24,6 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="마이페이지"
+                android:fontFamily="@font/cafe"
                 android:textColor="#212529"
                 android:textSize="20dp" />
 
@@ -55,7 +56,8 @@
                     android:id="@+id/txt_nick_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="닉네임"
+                    android:text="리아트"
+                    android:fontFamily="@font/cafe"
                     android:textColor="@color/black"
                     android:textSize="24dp" />
 
@@ -63,9 +65,10 @@
                     android:id="@+id/txt_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="이메일"
+                    android:text="reart88413@gmail.com"
                     android:textColor="@color/black"
-                    android:textSize="12dp" />
+                    android:fontFamily="@font/cafe24air"
+                    android:textSize="16dp" />
 
             </LinearLayout>
 
@@ -86,6 +89,7 @@
                 android:textSize="16dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
+                android:fontFamily="@font/cafe24air"
                 android:text="내 활동" />
 
             <LinearLayout
@@ -119,6 +123,7 @@
                 android:textSize="16dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="30dp"
+                android:fontFamily="@font/cafe24air"
                 android:text="로그아웃" />
 
             <LinearLayout

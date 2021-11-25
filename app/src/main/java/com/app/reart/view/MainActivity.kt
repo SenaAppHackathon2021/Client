@@ -2,6 +2,8 @@ package com.app.reart.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -16,6 +18,15 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
+
+    val listener = NavController.OnDestinationChangedListener { controller, destination, arguments ->
+        when(destination.id) {
+            R.id.homeFragment -> binding.fab.hide()
+            R.id.artBoardFragment -> binding.fab.show()
+            R.id.materialBoardFragment -> binding.fab.show()
+            R.id.myPageFragment -> binding.fab.hide()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.Theme_Reart)
@@ -38,6 +49,21 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        binding.fab.setOnClickListener {
+            Toast.makeText(this@MainActivity, "Clicked!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        navController.addOnDestinationChangedListener(listener)
+    }
+
+    override fun onPause() {
+        navController.removeOnDestinationChangedListener(listener)
+        super.onPause()
     }
 
     override fun onNavigateUp(): Boolean = navController.navigateUp() || super.onNavigateUp()

@@ -1,4 +1,4 @@
-package com.app.reart.view
+package com.app.reart.view.fragments.materialboard
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

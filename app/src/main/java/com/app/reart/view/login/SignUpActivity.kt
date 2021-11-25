@@ -1,4 +1,4 @@
-package com.app.reart.view.activity
+package com.app.reart.view.login
 
 import android.os.Bundle
 import com.app.reart.R

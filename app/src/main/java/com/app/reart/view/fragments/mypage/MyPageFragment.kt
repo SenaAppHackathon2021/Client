@@ -1,4 +1,4 @@
-package com.app.reart.view
+package com.app.reart.view.fragments.mypage
 
 import android.os.Bundle
 import android.view.LayoutInflater

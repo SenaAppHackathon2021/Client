@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Reart">
         <activity
-            android:name=".view.activity.NickActivity"
+            android:name=".view.login.NickActivity"
             android:exported="true" />
         <activity
-            android:name=".view.activity.SignUpActivity"
+            android:name=".view.login.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".view.activity.LoginActivity"
+            android:name=".view.login.LoginActivity"
             android:exported="true">
 
         </activity>

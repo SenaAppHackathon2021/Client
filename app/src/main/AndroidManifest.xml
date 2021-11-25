@@ -2,13 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.reart">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
+        android:networkSecurityConfig="@xml/security_config"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.Reart">
+        android:theme="@style/Theme.Reart"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".view.activity.NickActivity"
             android:exported="true" />
@@ -23,6 +32,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".view.MainActivity"

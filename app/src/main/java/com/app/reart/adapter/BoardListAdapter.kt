@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.reart.databinding.ItemArtBoardBinding
 import com.app.reart.model.ArtBoardItem
 
-class BoardListAdapter: RecyclerView.Adapter<BoardListAdapter.HomeListViewHolder>() {
+class BoardListAdapter: RecyclerView.Adapter<BoardListAdapter.BoardListViewHolder>() {
     var postList: ArrayList<ArtBoardItem> = arrayListOf()
 
-    class HomeListViewHolder(private var binding: ItemArtBoardBinding): RecyclerView.ViewHolder(binding.root) {
+    class BoardListViewHolder(private var binding: ItemArtBoardBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ArtBoardItem) {
 
             binding.textTitle.text = item.title
@@ -18,18 +18,18 @@ class BoardListAdapter: RecyclerView.Adapter<BoardListAdapter.HomeListViewHolder
         }
 
         companion object {
-            fun from(parent: ViewGroup): HomeListViewHolder {
+            fun from(parent: ViewGroup): BoardListViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = ItemArtBoardBinding.inflate(layoutInflater, parent, false)
 
-                return HomeListViewHolder(binding)
+                return BoardListViewHolder(binding)
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeListViewHolder = HomeListViewHolder.from(parent)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardListViewHolder = BoardListViewHolder.from(parent)
 
-    override fun onBindViewHolder(holder: HomeListViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BoardListViewHolder, position: Int) {
         holder.bind(postList[position])
     }
 

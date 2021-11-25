@@ -3,7 +3,7 @@ package com.app.reart.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Post(
+data class ArtPost(
     @SerializedName("title")
     val title: String,
     @SerializedName("content")
@@ -11,5 +11,5 @@ data class Post(
     @SerializedName("picture")
     val picture: Picture,
     @SerializedName("sponsor")
-    val sponsor: String
+    val sponsor: List<String>
 )

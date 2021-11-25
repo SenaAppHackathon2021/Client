@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/imageThumb"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="24dp"
+            app:riv_corner_radius="15dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/cafe24_ssurround"
+            android:maxLines="2"
+            android:text="@string/title_placeholder"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageThumb"
+            app:layout_constraintTop_toTopOf="@+id/imageThumb" />
+
+        <TextView
+            android:id="@+id/textAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/cafe24_ssurround_air"
+            android:text="@string/author_placeholder"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/textTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/cafe24_ssurround_air"
+            android:text="@string/date_placeholder"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            app:layout_constraintStart_toStartOf="@+id/textAuthor"
+            app:layout_constraintTop_toBottomOf="@+id/textAuthor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

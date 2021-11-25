@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/homeFragment"
+        android:icon="@drawable/icon_home"
+        android:title="홈" />
+    <item android:id="@+id/artBoardFragment"
+        android:icon="@drawable/icon_art_board"
+        android:title="아트게시판" />
+    <item android:id="@+id/materialBoardFragment"
+        android:icon="@drawable/icon_ingredient_board"
+        android:title="재료게시판" />
+    <item android:id="@+id/myPageFragment"
+        android:icon="@drawable/icon_mypage"
+        android:title="마이페이지" />
+
+</menu>

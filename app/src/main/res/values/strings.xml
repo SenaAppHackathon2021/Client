@@ -1,5 +1,24 @@
 <resources>
-    <string name="app_name">Reart</string>
+    <string name="app_name">리아</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <!--SplashActivity-->
+    <string name="title">Re.Art</string>
+    <string name="trash_to_art">쓰레기가 예술로 변하는 곳</string>
+    <!--LoginActivity-->
+    <string name="helloBlankFragment">Hello blank fragment</string>
+    <string name="loginHeaderText">로그인하셔서 ReArt를 이용해보세요</string>
+    <string name="emailLoginText">이메일을 적어주세요.</string>
+    <string name="passwordLoginText">비밀번호를 입력해주세요.</string>
+    <string name="login">로그인</string>
+    <string name="noAccountSignUp">아직 계정이 없으신가요? 회원가입 ></string>
+    <string name="my_page">마이페이지</string>
+    <string name="my_activity">내 활동</string>
+    <string name="logout">로그아웃</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="art_board">아트 게시판</string>
+    <string name="title_placeholder">페트병으로 만든 돌고래 어쩌고 저쩌고</string>
+    <string name="author_placeholder">요청자: OOO</string>
+    <string name="date_placeholder">2021년 11월 26일 오전 12:13</string>
+
 </resources>

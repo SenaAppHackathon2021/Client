@@ -1,14 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.post.PostMaterialFragment">
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E5E5E5"
+            tools:context=".view.post.PostArtFragment">
+
+            <ImageView
+                android:id="@+id/imageLogo"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/white"
+                android:src="@drawable/re_art_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/cafe24_ssurround_air"
+                android:hint="@string/title"
+                android:padding="20dp"
+                android:textColorHint="#797474"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageLogo" />
+
+            <EditText
+                android:id="@+id/editContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/cafe24_ssurround_air"
+                android:hint="@string/content"
+                android:padding="20dp"
+                android:textColorHint="#797474"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTitle" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/imageWrap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editContent">
+
+                <TextView
+                    android:id="@+id/tvUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cafe24_ssurround"
+                    android:text="@string/upload_image"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageBefore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_gallery"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvUpload"
+                    app:layout_constraintStart_toEndOf="@+id/tvUpload"
+                    app:layout_constraintTop_toTopOf="@+id/tvUpload" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/supporterWrap"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageWrap">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/cafe24_ssurround"
+                    android:text="@string/tel_and_address"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/editSupporter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#EFF4F5"
+                    android:fontFamily="@font/cafe24_ssurround_air"
+                    android:hint="연락처를 작성해주세요"
+                    android:padding="10dp"
+                    android:textColorHint="#959595"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonTel"
+                    app:layout_constraintStart_toStartOf="@+id/textView"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <Button
+                    android:id="@+id/buttonTel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/reart_main"
+                    android:fontFamily="@font/cafe24_ssurround"
+                    android:text="등록"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editSupporter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editSupporter" />
+
+                <EditText
+                    android:id="@+id/editAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#EFF4F5"
+                    android:fontFamily="@font/cafe24_ssurround_air"
+                    android:hint="주소를 작성해주세요"
+                    android:padding="10dp"
+                    android:textColorHint="#959595"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/buttonAddress"
+                    app:layout_constraintStart_toStartOf="@+id/editSupporter"
+                    app:layout_constraintTop_toBottomOf="@+id/editSupporter" />
+
+                <Button
+                    android:id="@+id/buttonAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/reart_main"
+                    android:fontFamily="@font/cafe24_ssurround"
+                    android:text="등록"
+                    android:textColor="@color/black"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/editAddress" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/reart_main"
+        android:fontFamily="@font/cafe24_ssurround"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingVertical="20dp"
+        android:text="@string/post"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:cornerRadius="0dp" />
+</LinearLayout>

@@ -30,10 +30,15 @@
 
         </LinearLayout>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:background="@color/white"
             android:orientation="horizontal">
 
@@ -56,7 +61,7 @@
                     android:id="@+id/txt_nick_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="리아트"
+                    android:text="Reart"
                     android:fontFamily="@font/cafe"
                     android:textColor="@color/black"
                     android:textSize="24dp" />
@@ -80,7 +85,7 @@
             android:layout_height="53dp"
             android:background="@color/white"
             android:orientation="horizontal"
-            android:layout_marginTop="8dp" >
+            android:layout_marginTop="6dp" >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -114,7 +119,7 @@
             android:layout_height="53dp"
             android:background="@color/white"
             android:orientation="horizontal"
-            android:layout_marginTop="6dp" >
+            android:layout_marginTop="3dp" >
 
             <TextView
                 android:layout_width="wrap_content"

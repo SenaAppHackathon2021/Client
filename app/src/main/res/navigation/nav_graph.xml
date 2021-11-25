@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.reart.view.HomeFragment"
+        android:label="메인 페이지"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/artBoardFragment"
+        android:name="com.app.reart.view.ArtBoardFragment"
+        android:label="아트 게시판"
+        tools:layout="@layout/fragment_art_board"/>
+    <fragment
+        android:id="@+id/materialBoardFragment"
+        android:name="com.app.reart.view.MaterialBoardFragment"
+        android:label="재료 게시판"
+        tools:layout="@layout/fragment_material_board"/>
+    <fragment
+        android:id="@+id/myPageFragment"
+        android:name="com.app.reart.view.MyPageFragment"
+        android:label="마이페이지"
+        tools:layout="@layout/fragment_my_page"/>
+</navigation>

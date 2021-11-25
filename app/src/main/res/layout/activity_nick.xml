@@ -17,6 +17,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/goBack"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
@@ -75,14 +76,15 @@
             android:id="@+id/editNick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_70dp"
             android:layout_marginLeft="@dimen/margin_30dp"
+            android:layout_marginTop="@dimen/margin_70dp"
             android:layout_marginRight="@dimen/margin_30dp"
             android:background="@drawable/bg_edit_nick_gray_no_radius"
             android:fontFamily="@font/roboto_light"
             android:hint="닉네임을 적어주세요"
             android:inputType="textEmailAddress"
             android:padding="10dp"
+            android:singleLine="true"
             android:textColorHint="@color/colorGray959595"
             android:textSize="@dimen/text_16sp"
             app:layout_constraintTop_toBottomOf="@+id/toNameNick" />
@@ -90,8 +92,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/nick_least_15"
             android:layout_marginTop="15dp"
+            android:src="@drawable/nick_least_15"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editNick" />

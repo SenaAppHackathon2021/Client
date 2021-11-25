@@ -1,6 +1,9 @@
 ### Reart Application
 > Reart는 환경을 아끼자는 마음에 만드는 어플리케이션입니다.
 
+### 스프레드시트 기획서
+> https://docs.google.com/spreadsheets/d/1sICoVdmEY2WhP9xWdsvtx5sf0-MiFbCQPmU-wQLQM2Q/edit#gid=1685762774
+
 ### 협업 규칙  
 > Git Flow를 사용합니다.  
 ``` 

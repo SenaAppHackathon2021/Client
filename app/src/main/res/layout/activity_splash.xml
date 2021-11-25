@@ -10,16 +10,17 @@
     tools:context=".view.SplashActivity">
 
     <ImageView
-        android:layout_width="250dp"
+        android:layout_width="230dp"
         android:layout_height="84dp"
         android:src="@drawable/app_logo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:textSize="20dp"
         android:textColor="#212529"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/cafe24air"
         android:text="쓰레기를\n예술로 변하는 곳"
         android:textAlignment="center"/>
 

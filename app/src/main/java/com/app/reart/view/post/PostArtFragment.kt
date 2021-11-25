@@ -2,8 +2,12 @@ package com.app.reart.view.post
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
+import android.util.Base64.NO_WRAP
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,17 +18,21 @@ import androidx.lifecycle.ViewModelProvider
 import com.app.reart.R
 import com.app.reart.adapter.PostArtAdapter
 import com.app.reart.databinding.FragmentPostArtBinding
+import com.app.reart.model.ArtPost
+import com.app.reart.model.Picture
 import com.app.reart.viewmodel.PostArtViewModel
+import java.io.ByteArrayOutputStream
+import java.io.InputStream
 
 class PostArtFragment : Fragment() {
     private lateinit var binding: FragmentPostArtBinding
     private lateinit var viewModel: PostArtViewModel
 
-    private val galleryIntent = Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
     private val GET_BEFORE_IMAGE_REQUEST = 0
     private val GET_AFTER_IMAGE_REQUEST = 1
-    private var photoBeforeUri: Uri? = null
-    private var photoAfterUri: Uri? = null
+    private val galleryIntent =
+        Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+
 
     private val mAdapter by lazy { PostArtAdapter() }
 
@@ -88,14 +96,44 @@ class PostArtFragment : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == GET_BEFORE_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
-            photoBeforeUri = data?.data
+            viewModel.photoBeforeUri = data?.data
+            viewModel.photoBeforeBase64 = getBase64StringOf(data)
 
-            binding.imageBefore.setImageURI(photoBeforeUri)
+            binding.imageBefore.setImageURI(viewModel.photoBeforeUri)
         }
         if (requestCode == GET_AFTER_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
-            photoAfterUri = data?.data
+            viewModel.photoAfterUri = data?.data
+            viewModel.photoAfterBase64 = getBase64StringOf(data)
 
-            binding.imageAfter.setImageURI(photoAfterUri)
+            binding.imageAfter.setImageURI(viewModel.photoAfterUri)
         }
+    }
+
+    private fun getBase64StringOf(intent: Intent?): String {
+        val currentImageURL = intent?.data
+
+        // Base64 인코딩부분
+        val ins: InputStream? = currentImageURL?.let {
+            activity!!.applicationContext.contentResolver.openInputStream(it)
+        }
+        val img: Bitmap = BitmapFactory.decodeStream(ins)
+        ins?.close()
+
+        val resized = Bitmap.createScaledBitmap(img, 256, 256, true)
+//        val resized = Bitmap.createBitmap(img)
+
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        resized.compress(Bitmap.CompressFormat.JPEG, 60, byteArrayOutputStream)
+        val byteArray: ByteArray = byteArrayOutputStream.toByteArray()
+
+        val result = Base64.encodeToString(byteArray, NO_WRAP)
+
+        Log.d("getBase64StringOf", result)
+
+        return result
+    }
+
+    private fun makeToast(msg: String) {
+        Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
 }

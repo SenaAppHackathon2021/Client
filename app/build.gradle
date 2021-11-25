@@ -51,4 +51,7 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // RoundedImageView Library
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }

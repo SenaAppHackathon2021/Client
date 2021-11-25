@@ -1,7 +1,7 @@
 package com.app.reart.model
 
-data class ArtBoardItem(
-    val thumbnailSrc: String,
+data class BoardItem(
+    val thumbnailSrc: Int?,
     val title: String,
     val author: String,
     val date: String

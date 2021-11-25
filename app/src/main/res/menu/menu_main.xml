@@ -2,25 +2,17 @@
 <menu xmlns:android = "http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/btnv_item_home"
-        app:showAsAction="ifRoom"
+    <item android:id="@+id/homeFragment"
         android:icon="@drawable/icon_home"
-        android:enabled="true"
         android:title="홈" />
-    <item android:id="@+id/btnv_item_art_board"
-        app:showAsAction="ifRoom"
+    <item android:id="@+id/artBoardFragment"
         android:icon="@drawable/icon_art_board"
-        android:enabled="true"
         android:title="아트게시판" />
-    <item android:id="@+id/btnv_item_ingredient_board"
-        app:showAsAction="ifRoom"
+    <item android:id="@+id/materialBoardFragment"
         android:icon="@drawable/icon_ingredient_board"
-        android:enabled="true"
         android:title="재료게시판" />
-    <item android:id="@+id/btnv_item_mypage"
-        app:showAsAction="ifRoom"
+    <item android:id="@+id/myPageFragment"
         android:icon="@drawable/icon_mypage"
-        android:enabled="true"
         android:title="마이페이지" />
 
 </menu>

@@ -13,4 +13,8 @@
     <color name="colorWhiteYellowFFDD87">#FFDD87</color>
     <color name="colorTextGray8D8D8D">#8D8D8D</color>
     <color name="colorViewGray">#666666</color>
+
+    <color name="reartMain">#FFDD87</color>
+    <color name="reartDark">#FCC419</color>
+    <color name="reartDarker">#F76707</color>
 </resources>

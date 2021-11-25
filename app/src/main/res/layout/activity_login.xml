@@ -27,7 +27,7 @@
             android:fontFamily="@font/noto_san_regular"
             android:text="@string/loginHeaderText"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_22sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/loginMainLogo" />
@@ -41,24 +41,25 @@
             android:fontFamily="@font/roboto_light"
             android:hint="@string/emailLoginText"
             android:padding="10dp"
+            android:singleLine="true"
             android:textColorHint="@color/colorGray959595"
             android:textSize="@dimen/text_20sp"
             app:layout_constraintTop_toBottomOf="@+id/loginHeader" />
 
-    <EditText
-        android:id="@+id/editPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_24dp"
-        android:inputType="textPassword"
-        android:background="@drawable/bg_edit_email_gray_radius_5dp"
-        android:fontFamily="@font/roboto_light"
-        android:hint="@string/passwordLoginText"
-        android:padding="10dp"
-        android:textColorHint="@color/colorGray959595"
-        android:textSize="@dimen/text_20sp"
-        app:layout_constraintTop_toBottomOf="@+id/editEmail"
-        />
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_24dp"
+            android:background="@drawable/bg_edit_email_gray_radius_5dp"
+            android:fontFamily="@font/roboto_light"
+            android:hint="@string/passwordLoginText"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColorHint="@color/colorGray959595"
+            android:textSize="@dimen/text_20sp"
+            app:layout_constraintTop_toBottomOf="@+id/editEmail" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnLogin"

@@ -22,7 +22,7 @@
         android:layout_height="10dp"
         android:background="#E5E5E5"/>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -79,9 +79,9 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="20dp"/>
             <androidx.recyclerview.widget.RecyclerView
-                android:background="#ccdd"
+                android:id="@+id/rv_home_artwork"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

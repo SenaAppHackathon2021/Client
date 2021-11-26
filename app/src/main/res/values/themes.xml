@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Reart" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/reartMain</item>
+        <item name="colorPrimary">@color/reart_main</item>
         <item name="colorPrimaryVariant">@color/reartDark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->

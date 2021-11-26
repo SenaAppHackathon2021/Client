@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".view.SplashActivity">
@@ -20,7 +21,7 @@
         android:textSize="24dp"
         android:textColor="#212529"
         android:layout_marginTop="10dp"
-        android:text="쓰레기를\n예술로 변하는 곳"
+        android:text="쓰레기가\n예술로 변하는 곳"
         android:textAlignment="center"/>
 
 </LinearLayout>

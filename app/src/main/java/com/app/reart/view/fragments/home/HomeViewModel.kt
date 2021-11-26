@@ -21,7 +21,7 @@ class HomeViewModel : ViewModel() {
         BoardItem(
             R.drawable.after1,
             "유리병으로 만든 선인장들",
-            "홍길동",
+            "정민혁",
             "2021년 11월 06일 16시 21분"
         ),
         BoardItem(

@@ -1,6 +1,7 @@
 package com.app.reart.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.app.reart.Arts
-import com.app.reart.ArtsAdapter
-import com.app.reart.R
+import com.app.reart.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class HomeFragment : Fragment() {
 
@@ -27,13 +31,23 @@ class HomeFragment : Fragment() {
         rvHomeArtwork.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
         rvHomeArtwork.setHasFixedSize(true)
 
-        var artWorkList = arrayListOf(Arts(1,"페트병으로 만든 돌고래","Moon", "20:00",R.drawable.after5),
-            Arts(1,"깡통강아지","hwaun", "2021년 11월 16일 15시 30분",R.drawable.after4),
-            Arts(1,"타이어 쇠똥구리","jjo77", "2021년 11월 16일 15시 30분",R.drawable.after3),
-            Arts(1,"단추로 만든 아인슈타인","read", "2021년 11월 16일 15시 30분",R.drawable.after2),
-            Arts(1,"페트병 선인장","user123", "2021년 11월 16일 15시 30분",R.drawable.after1),)
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl("http://27.96.135.11:3000/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
-        rvHomeArtwork.adapter = ArtsAdapter(artWorkList)
+        val service = retrofit.create(ArtsRetrofitService::class.java)
+
+        service.getArtsList().enqueue(object : Callback<ArtworkList?> {
+            override fun onResponse(call: Call<ArtworkList?>, response: Response<ArtworkList?>) {
+                var artWorkList = response.body()?.data
+                rvHomeArtwork.adapter = ArtsAdapter(artWorkList as ArrayList<Arts>)
+            }
+
+            override fun onFailure(call: Call<ArtworkList?>, t: Throwable) {
+                Log.d("로그","Home False")
+            }
+        })
         return v
     }
 

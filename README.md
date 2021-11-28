@@ -4,6 +4,9 @@
 ### 스프레드시트 기획서
 > https://docs.google.com/spreadsheets/d/1sICoVdmEY2WhP9xWdsvtx5sf0-MiFbCQPmU-wQLQM2Q/edit#gid=1685762774
 
+### 설계 디자인 명세서
+> https://www.figma.com/file/bx4n07lkaUUR2iRrrooLmJ/Reart?node-id=0%3A1
+
 ### 협업 규칙  
 > Git Flow를 사용합니다.  
 ``` 
